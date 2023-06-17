@@ -2,8 +2,9 @@ const express = require("express"); //Importando todas as funcionalidades do exp
 
 const app = express(); //Inicializando o express
 
-app.get("/", (request, response) => {
-    response.send("Hello World")
+app.get("/message/:id", (request, response) => {
+    const { id } = request.params;
+    response.send(`ID da mensagem: ${id}`)
 }) // GET para exibir uma mensagem no navegador ao acessar a rota.
 
 const PORT = 3333;
