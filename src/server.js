@@ -2,8 +2,11 @@ const express = require("express"); //Importando todas as funcionalidades do exp
 
 const app = express(); //Inicializando o express
 
-const PORT = 3333;
+app.get("/", (request, response) => {
+    response.send("Hello World")
+}) // GET para exibir uma mensagem no navegador ao acessar a rota.
 
+const PORT = 3333;
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`)
 }) 
